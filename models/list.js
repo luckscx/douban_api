@@ -47,12 +47,15 @@ const List = {
             let cover = _$.find('.cover-link .cover').attr('src');
             //评分
             let rating = _$.find('.rating_nums').text();
+            //评分人数
+            let rating_user = _$.find('.pl').text();
             //摘要
             let abstract = List._abstractHandle(_$, catNum);
             let _data = {
                 cover_link,
                 cover,
                 rating,
+                rating_user,
                 ...abstract
             };
             if (List._filter(_data, catNum)) {
@@ -106,7 +109,7 @@ const List = {
         price = arr.pop();
         date = arr.pop();
         press = arr.pop();
-        author = arr.join('/');
+        author = arr;
         return { title, author, press, date, price };
     },
 
