@@ -100,7 +100,7 @@ const List = {
         let date = '';
         let price = '';
         let arr = abstract.split('/');
-        if (arr.length < 4) {
+        if (arr.length < 2) {
             return {};
         }
         arr = arr.map((item) => {

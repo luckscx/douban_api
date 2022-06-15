@@ -5,7 +5,6 @@ let browser;
 
 const start = async function () {
   return await puppeteer.launch({
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
     userDataDir: '/tmp/chrome'
   });
 };

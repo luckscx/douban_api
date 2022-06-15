@@ -164,6 +164,7 @@ const Detail = {
     let info = {};
     let infoStr = $content.find("#info").text();
     let keyItem = $content.find("#info .pl");
+    console.log(infoStr);
     keyItem.each((i, item) => {
       let key = $(item).text().trim();
       let reg = new RegExp(`${key}:?[\\n\\s]+([^:]+)[\\n\\s]+([^\\n\\s]+:|$)`);
@@ -171,15 +172,18 @@ const Detail = {
       value = value ? value[1] : "";
 
       if (key == "原作名:") {
-        const reg = /原作名: (.*)/i;
-        const res = infoStr.match(reg);
+        const res = infoStr.match(/原作名: (.*)/i);
         if (res) {
           value = res[1].trim()
         }
+      } else if (key == "作者") {
+        value = value.trim()
       } else {
         value = trims(value)
       }
       key = key.replace(":","")
+      console.log(key);
+      console.log(value);
       info[key] = value;
     });
     return info;
