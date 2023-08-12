@@ -1,7 +1,10 @@
 module.exports = {
   apps : [{
     script: 'app.js',
-    watch: '.'
+    watch: '.',
+    env : {
+      "CHROME_DEVEL_SANDBOX" : "/usr/local/sbin/chrome-devel-sandbox"
+    }
   }],
 
   deploy : {

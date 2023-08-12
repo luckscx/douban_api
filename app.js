@@ -36,9 +36,7 @@ app.use(function (err, req, res, next) {
 });
 
 //监听端口
-app.listen(config.port, () => {
-    let ip = getIPAdress();
+app.listen(config.port, "127.0.0.1", () => {
     log('服务成功启动');
-    log(`访问地址：http://localhost:${config.port}`);
-    log(`访问地址：http://${ip}:${config.port}`);
+    log(`访问地址：http://127.0.0.1:${config.port}`);
 });
